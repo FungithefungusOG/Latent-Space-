@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model WaitlistApplication {
+  id          String   @id @default(cuid())
+  name        String
+  email       String   @unique
+  phone       String
+  linkedinUrl String
+  aiUsage     String
+  why         String
+  createdAt   DateTime @default(now())
+
+  @@map("waitlist_applications")
+}
