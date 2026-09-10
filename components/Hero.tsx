@@ -96,7 +96,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="hero-subtitle">
-          Spain&apos;s premier AI workshop space. An intimate, collaborative environment in the secluded Galician countryside where the brightest builders, researchers, and visionaries step away from the noise and shape what comes next.
+          Spain&apos;s premier AI workshop space, taking place <strong>November 4–8</strong>. An intimate, collaborative environment in the secluded Galician countryside where the brightest builders, researchers, and visionaries step away from the noise and shape what comes next.
         </p>
         <div className="hero-actions">
           <a 
@@ -112,9 +112,9 @@ export default function Hero() {
         <div className="hero-stats" ref={statsRef}>
           <div className="stat"><span className="stat-num">10</span><span className="stat-label">Curated Attendees</span></div>
           <div className="stat-divider"></div>
-          <div className="stat"><span className="stat-num">4</span><span className="stat-label">Days Immersive</span></div>
+          <div className="stat"><span className="stat-num">5</span><span className="stat-label">Days Immersive</span></div>
           <div className="stat-divider"></div>
-          <div className="stat"><span className="stat-num">1</span><span className="stat-label">Latent Space</span></div>
+          <div className="stat"><span className="stat-num" style={{ fontSize: '1.8rem', paddingTop: '0.2rem' }}>Nov 4-8</span><span className="stat-label">Galicia, Spain</span></div>
           <div className="stat-divider"></div>
           <div className="stat"><span className="stat-inf" style={{ fontFamily: 'serif' }}>∞</span><span className="stat-label">Ideas</span></div>
         </div>

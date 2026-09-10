@@ -12,7 +12,7 @@ export default function Pricing() {
             <div className="pricing-badge">All-Inclusive</div>
             <div className="pricing-tier">Latent Space Pass</div>
             <div className="pricing-price">€400</div>
-            <div className="pricing-note">per person · all-inclusive</div>
+            <div className="pricing-note">per person · all-inclusive · Nov 4-8</div>
             <ul className="pricing-features">
               <li>✓ Full retreat access (5 days, 4 nights)</li>
               <li>✓ All sessions &amp; workshops</li>
