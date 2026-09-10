@@ -114,7 +114,7 @@ export default function Hero() {
           <div className="stat-divider"></div>
           <div className="stat"><span className="stat-num">5</span><span className="stat-label">Days Immersive</span></div>
           <div className="stat-divider"></div>
-          <div className="stat"><span className="stat-num" style={{ fontSize: '1.8rem', paddingTop: '0.2rem' }}>Nov 4-8</span><span className="stat-label">Galicia, Spain</span></div>
+          <div className="stat"><span className="stat-num">1</span><span className="stat-label">Latent Space</span></div>
           <div className="stat-divider"></div>
           <div className="stat"><span className="stat-inf" style={{ fontFamily: 'serif' }}>∞</span><span className="stat-label">Ideas</span></div>
         </div>
