@@ -8,7 +8,7 @@ export default function Footer() {
           <LatentSpaceLogo />
           <p>Spain&apos;s premier AI workshop space for those building the future.</p>
           <div className="footer-socials">
-            <a href="#" aria-label="Instagram" id="social-instagram">IG</a>
+            <a href="https://www.instagram.com/growth.coliving.galicia?stkn=MjM4MGQwaWNpYmxl&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" id="social-instagram">IG</a>
             <a href="#" aria-label="Email" id="social-email">@</a>
           </div>
         </div>
