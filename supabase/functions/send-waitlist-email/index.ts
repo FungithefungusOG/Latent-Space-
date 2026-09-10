@@ -17,12 +17,15 @@ serve(async (req) => {
 
     // Send the email
     const data = await resend.emails.send({
-      from: 'Latent Space <onboarding@resend.dev>',
+      from: 'Latent Space <latentspace@growthcoliving.com>',
       to: email, // Note: Must be your verified Resend email while in free tier
       subject: 'Application Received: Latent Space Founding Cohort',
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
-          <h2 style="color: #00E5FF; background: #0A0A0B; padding: 20px; text-align: center; border-radius: 8px;">Latent Space</h2>
+          <div style="background: #0A0A0B; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 24px;">
+            <img src="https://latentspace.growthcoliving.com/icon.svg" width="56" height="56" alt="Latent Space Icon" style="display: block; margin: 0 auto 16px auto;" />
+            <h2 style="color: #ffffff; margin: 0; font-family: 'Courier New', Courier, monospace; letter-spacing: 4px; font-weight: 600; font-size: 20px;">LATENT SPACE</h2>
+          </div>
           <p>Hi ${name},</p>
           <p>Thank you for applying to the <strong>Founding Cohort</strong> of Latent Space.</p>
           <p>We have received your application and are currently reviewing it. Because we are strictly limiting this cohort to 10 attendees, the selection process is highly curated.</p>
