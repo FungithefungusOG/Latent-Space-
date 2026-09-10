@@ -15,10 +15,15 @@ export const metadata: Metadata = {
   },
 };
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${syne.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics gaId="G-6ZG4VCB53V" />
+      </body>
     </html>
   );
 }
