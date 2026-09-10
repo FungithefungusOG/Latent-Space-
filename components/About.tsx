@@ -22,7 +22,7 @@ export default function About() {
 
           <p>Every detail is curated - the attendees, the setting, the schedule - so that every moment has the potential to shift how you see your work and the world.</p>
           <ul className="about-list">
-            <li><span>✦</span> Invitation-only application process</li>
+            <li><span>✦</span> Open applications, invite-only attendance</li>
             <li><span>✦</span> Max 10 attendees per cohort</li>
             <li><span>✦</span> Hosted at a secluded villa in the Galician countryside</li>
             <li><span>✦</span> Not a series of lectures, but a continuous learning experience</li>
