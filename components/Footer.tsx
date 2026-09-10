@@ -8,8 +8,7 @@ export default function Footer() {
           <LatentSpaceLogo />
           <p>Spain&apos;s premier AI workshop space for those building the future.</p>
           <div className="footer-socials">
-            <a href="#" aria-label="Twitter" id="social-twitter">𝕏</a>
-            <a href="#" aria-label="LinkedIn" id="social-linkedin">in</a>
+            <a href="#" aria-label="Instagram" id="social-instagram">IG</a>
             <a href="#" aria-label="Email" id="social-email">@</a>
           </div>
         </div>

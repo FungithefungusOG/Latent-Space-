@@ -17,7 +17,7 @@ export default function Pricing() {
               <li>✓ Full retreat access (5 days, 4 nights)</li>
               <li>✓ All sessions &amp; workshops</li>
               <li>✓ Meals &amp; accommodation</li>
-              <li>✓ Community dinners</li>
+              <li>✓ Hikes in the Galician countryside</li>
               <li>✓ Fireside chats &amp; deep dives</li>
               <li>✓ Small-group collaborative sessions</li>
               <li>✓ Swag kit &amp; digital resources</li>

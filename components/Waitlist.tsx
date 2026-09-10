@@ -92,7 +92,7 @@ export default function Waitlist() {
                     <option value="builder">🔵 I build AI-powered features or automations</option>
                     <option value="advanced">🟣 I design AI workflows and agent pipelines</option>
                     <option value="researcher">🔴 I train, fine-tune, or research AI models</option>
-                    <option value="executive">⚫ I lead AI strategy, invest, or advise AI companies</option>
+                    <option value="executive">🟢 I lead AI strategy, invest, or advise AI companies</option>
                     <option value="other">✏️ Other</option>
                   </select>
                 </div>
