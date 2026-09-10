@@ -7,7 +7,7 @@ const features = [
   { icon: '💬', title: 'Fireside Chats', desc: 'Unfiltered, unrehearsed conversations between attendees. No keynotes, just raw, honest dialogue around what we\'re all building and where it\'s heading.' },
   { icon: '🔗', title: 'High-Signal Networking', desc: 'No badge scanners. No awkward mixers. Structured connection rituals that build genuine, lasting relationships with people who matter.' },
   { icon: '🤝', title: 'Collaborative Format', desc: 'This is not a passive experience. Every participant is both a learner and a contributor. Your ideas, questions, and perspective are what make Latent Space what it is.' },
-  { icon: '🪐', title: 'The Latent Network', desc: 'Connection doesn\'t end when the retreat does. The bonds built over 4 days become the foundation of an ongoing community of people thinking seriously about AI.' },
+  { icon: '🪐', title: 'The Latent Network', desc: 'Connection doesn\'t end when the retreat does. The bonds built over 5 days become the foundation of an ongoing community of people thinking seriously about AI.' },
 ];
 
 export default function Features() {

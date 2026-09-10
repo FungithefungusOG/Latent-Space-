@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Spain\'s premier AI workshop space. An intimate, collaborative environment where builders, researchers, and visionaries shape what comes next.',
   openGraph: {
     title: 'Latent Space | AI Retreat',
-    description: 'A curated AI workshop space for builders, thinkers, and creators. 10 attendees. 4 days. Held in Spain.',
+    description: 'A curated AI workshop space for builders, thinkers, and creators. 10 attendees. 5 days, 4 nights. Held in Spain.',
     type: 'website',
   },
 };

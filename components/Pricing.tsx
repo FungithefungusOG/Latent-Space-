@@ -14,7 +14,7 @@ export default function Pricing() {
             <div className="pricing-price">€400</div>
             <div className="pricing-note">per person · all-inclusive</div>
             <ul className="pricing-features">
-              <li>✓ Full retreat access (4 days)</li>
+              <li>✓ Full retreat access (5 days, 4 nights)</li>
               <li>✓ All sessions &amp; workshops</li>
               <li>✓ Meals &amp; accommodation</li>
               <li>✓ Community dinners</li>
