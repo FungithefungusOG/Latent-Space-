@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import LatentSpaceLogo from './LatentSpaceLogo';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,6 +25,10 @@ export default function Navbar() {
     document.body.style.overflow = next ? 'hidden' : '';
   };
 
+  const trackApplyClick = () => {
+    sendGAEvent({ event: 'click_apply', location: 'navbar' });
+  };
+
   return (
     <>
       <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
@@ -36,7 +41,7 @@ export default function Navbar() {
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <a className="btn-nav" href="#waitlist">Apply Now</a>
+          <a className="btn-nav" href="#waitlist" onClick={trackApplyClick}>Apply Now</a>
           <button className="burger" id="burger" aria-label="Toggle menu" onClick={toggleMenu}>
             <span></span><span></span><span></span>
           </button>
@@ -50,7 +55,18 @@ export default function Navbar() {
           <li><a href="#testimonials" onClick={closeMenu}>Stories</a></li>
           <li><a href="#pricing" onClick={closeMenu}>Pricing</a></li>
           <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-          <li><a href="#waitlist" className="btn-nav" onClick={closeMenu}>Apply Now</a></li>
+          <li>
+            <a 
+              href="#waitlist" 
+              className="btn-nav" 
+              onClick={(e) => {
+                toggleMenu();
+                trackApplyClick();
+              }}
+            >
+              Apply Now
+            </a>
+          </li>
         </ul>
       </div>
     </>

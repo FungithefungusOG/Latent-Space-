@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import NeuralCanvas from './NeuralCanvas';
+import { sendGAEvent } from '@next/third-parties/google';
 
 
 const STREAM_LINE1 = 'Enter the';
@@ -98,7 +99,14 @@ export default function Hero() {
           Spain&apos;s premier AI workshop space. An intimate, collaborative environment in the secluded Galician countryside where the brightest builders, researchers, and visionaries step away from the noise and shape what comes next.
         </p>
         <div className="hero-actions">
-          <a href="#waitlist" className="btn-primary" id="hero-cta">Apply for the Retreat</a>
+          <a 
+            href="#waitlist" 
+            className="btn-primary" 
+            id="hero-cta"
+            onClick={() => sendGAEvent({ event: 'click_apply', location: 'hero' })}
+          >
+            Apply for the Retreat
+          </a>
           <a href="#about" className="btn-ghost">Learn More ↓</a>
         </div>
         <div className="hero-stats" ref={statsRef}>

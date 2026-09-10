@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
 
@@ -32,6 +33,10 @@ export default function Waitlist() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Something went wrong');
+      
+      // Fire Google Analytics conversion event
+      sendGAEvent({ event: 'generate_lead', method: 'waitlist_form' });
+      
       setFormState('success');
     } catch (err: unknown) {
       setFormState('error');
