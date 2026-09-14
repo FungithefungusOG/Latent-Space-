@@ -21,8 +21,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('ls-lang') as Lang | null;
+    
     if (saved && ['en', 'es', 'it', 'fr'].includes(saved)) {
       setLangState(saved);
+    } else if (typeof navigator !== 'undefined' && navigator.language) {
+      // e.g., 'es-ES' -> 'es', 'en-US' -> 'en'
+      const browserLang = navigator.language.slice(0, 2).toLowerCase();
+      if (['en', 'es', 'it', 'fr'].includes(browserLang)) {
+        setLangState(browserLang as Lang);
+      }
     }
   }, []);
 
