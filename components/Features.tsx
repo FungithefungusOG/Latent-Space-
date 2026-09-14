@@ -1,16 +1,10 @@
 'use client';
 import { useEffect, useRef } from 'react';
-
-const features = [
-  { icon: '🧠', title: 'Deep-Dive Sessions', desc: 'Intimate collaborative workshops where every attendee brings their perspective to the table. We go beyond the surface, exploring the architectures, philosophies, and futures that matter.' },
-  { icon: '🌌', title: 'Immersive Environment', desc: 'Nestled in a secluded villa in the Galician countryside, just 10 minutes from the Portuguese border. Designed to stimulate creativity and deep focus away from the digital noise.' },
-  { icon: '💬', title: 'Fireside Chats', desc: 'Unfiltered, unrehearsed conversations between attendees. No keynotes, just raw, honest dialogue around what we\'re all building and where it\'s heading.' },
-  { icon: '🔗', title: 'High-Signal Networking', desc: 'No badge scanners. No awkward mixers. Structured connection rituals that build genuine, lasting relationships with people who matter.' },
-  { icon: '🤝', title: 'Collaborative Format', desc: 'This is not a passive experience. Every participant is both a learner and a contributor. Your ideas, questions, and perspective are what make Latent Space what it is.' },
-  { icon: '🪐', title: 'The Latent Network', desc: 'Connection doesn\'t end when the retreat does. The bonds built over 5 days become the foundation of an ongoing community of people thinking seriously about AI.' },
-];
+import { useLang } from '@/context/LanguageContext';
 
 export default function Features() {
+  const { t, tr } = useLang();
+  const f = tr.features;
   const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,16 +27,16 @@ export default function Features() {
     <section id="features">
       <div className="container">
         <div className="section-header reveal-on-scroll">
-          <span className="section-tag">The Workshop</span>
-          <h2>Not a conference.<br /><em>A collaborative space.</em></h2>
-          <p>Every element of Latent Space is designed for hands-on building, deep thinking, and real connection, making it the definitive gathering for AI in Spain.</p>
+          <span className="section-tag">{t(f.tag)}</span>
+          <h2>{t(f.title1)}<br /><em>{t(f.title2)}</em></h2>
+          <p>{t(f.subtitle)}</p>
         </div>
         <div className="features-grid" ref={cardsRef}>
-          {features.map((f, i) => (
+          {f.items.map((item, i) => (
             <div className="feature-card" key={i} data-index={i}>
-              <div className="feature-icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
+              <div className="feature-icon">{item.icon}</div>
+              <h3>{t(item.title)}</h3>
+              <p>{t(item.desc)}</p>
             </div>
           ))}
         </div>

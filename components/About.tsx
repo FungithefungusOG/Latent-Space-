@@ -1,33 +1,36 @@
+'use client';
+import { useLang } from '@/context/LanguageContext';
+
 export default function About() {
+  const { t, tr } = useLang();
+  const a = tr.about;
   return (
     <section id="about">
       <div className="container about-inner">
         <div className="about-visual">
           <div className="about-glow-box">
-            <div className="about-quote">&quot;The most transformative conversations happen in the spaces between the sessions.&quot;</div>
-            <div className="about-author">- Latent Space Alumni</div>
+            <div className="about-quote">{t(a.quote)}</div>
+            <div className="about-author">{t(a.quoteAuthor)}</div>
           </div>
         </div>
         <div className="about-text">
-          <span className="section-tag">Our Mission</span>
-          <h2>Built for those<br />building the future</h2>
-          <p>Latent Space was born from a simple belief: the people building and thinking about AI need time and space to connect more deeply, think more clearly, and dream more boldly.</p>
-          
+          <span className="section-tag">{t(a.tag)}</span>
+          <h2>{t(a.title)}</h2>
+          <p>{t(a.p1)}</p>
+
           <div style={{ margin: '2rem 0', padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderLeft: '3px solid var(--cyan)', borderRadius: '0 8px 8px 0' }}>
-            <h3 style={{ fontSize: '1.1rem', color: 'white', marginBottom: '0.75rem', fontWeight: 600 }}>Who is this for?</h3>
-            <p style={{ margin: 0, fontSize: '0.95rem' }}>
-              We are exclusively selecting a diverse, multidisciplinary group of <strong>founders, engineers, product leaders, designers, writers, and artists</strong>. Whether you write code, craft products, or explore the creative frontier, if you are actively pushing the boundaries of AI, this Founding Cohort is for you.
-            </p>
+            <h3 style={{ fontSize: '1.1rem', color: 'white', marginBottom: '0.75rem', fontWeight: 600 }}>{t(a.whoTitle)}</h3>
+            <p style={{ margin: 0, fontSize: '0.95rem' }} dangerouslySetInnerHTML={{ __html: t(a.whoDesc) }} />
           </div>
 
-          <p>Every detail is curated - the attendees, the setting, the schedule - so that every moment has the potential to shift how you see your work and the world.</p>
+          <p>{t(a.p2)}</p>
           <ul className="about-list">
-            <li><span>✦</span> Open applications, invite-only attendance</li>
-            <li><span>✦</span> Max 10 attendees per cohort</li>
-            <li><span>✦</span> Hosted at a secluded villa in the Galician countryside</li>
-            <li><span>✦</span> Not a series of lectures, but a continuous learning experience</li>
+            <li><span>✦</span> {t(a.list1)}</li>
+            <li><span>✦</span> {t(a.list2)}</li>
+            <li><span>✦</span> {t(a.list3)}</li>
+            <li><span>✦</span> {t(a.list4)}</li>
           </ul>
-          <a href="#waitlist" className="btn-primary">Apply to Attend</a>
+          <a href="#waitlist" className="btn-primary">{t(a.cta)}</a>
         </div>
       </div>
     </section>

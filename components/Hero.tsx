@@ -2,10 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import NeuralCanvas from './NeuralCanvas';
 import { sendGAEvent } from '@next/third-parties/google';
-
-
-const STREAM_LINE1 = 'Enter the';
-const STREAM_LINE2 = 'Latent Space';
+import { useLang } from '@/context/LanguageContext';
 
 function useStreamText(text: string, startDelay = 800, speed = 55) {
   const [displayed, setDisplayed] = useState('');
@@ -39,6 +36,10 @@ function animateCounter(el: HTMLElement, target: number, suffix: string) {
 }
 
 export default function Hero() {
+  const { t, tr } = useLang();
+  const h = tr.hero;
+  const STREAM_LINE1 = t(h.line1);
+  const STREAM_LINE2 = 'Latent Space';
   const statsRef = useRef<HTMLDivElement>(null);
   const line1 = useStreamText(STREAM_LINE1, 400, 60);
   const line2 = useStreamText(STREAM_LINE2, 400 + STREAM_LINE1.length * 65 + 200, 55);
@@ -84,7 +85,7 @@ export default function Hero() {
       </div>
       <div className="hero-content">
         <div className="hero-badge">
-          <span className="dot"></span> Applications open for the Founding Cohort
+          <span className="dot"></span> {t(h.badge)}
         </div>
         <h1 className="hero-title">
           <span className="stream-line">
@@ -95,28 +96,26 @@ export default function Hero() {
             {line2.displayed}<span className={`stream-cursor${line2.done ? ' stream-cursor-hide' : ''}`}>|</span>
           </span>
         </h1>
-        <p className="hero-subtitle">
-          Spain&apos;s premier AI workshop space, taking place <strong>November 4–8</strong>. An intimate, collaborative environment in the secluded Galician countryside where the brightest builders, researchers, and visionaries step away from the noise and shape what comes next.
-        </p>
+        <p className="hero-subtitle" dangerouslySetInnerHTML={{ __html: t(h.subtitle) }} />
         <div className="hero-actions">
-          <a 
-            href="#waitlist" 
-            className="btn-primary" 
+          <a
+            href="#waitlist"
+            className="btn-primary"
             id="hero-cta"
             onClick={() => sendGAEvent({ event: 'click_apply', location: 'hero' })}
           >
-            Apply for the Retreat
+            {t(h.cta)}
           </a>
-          <a href="#about" className="btn-ghost">Learn More ↓</a>
+          <a href="#about" className="btn-ghost">{t(h.learnMore)}</a>
         </div>
         <div className="hero-stats" ref={statsRef}>
-          <div className="stat"><span className="stat-num">10</span><span className="stat-label">Curated Attendees</span></div>
+          <div className="stat"><span className="stat-num">10</span><span className="stat-label">{t(h.statAttendees)}</span></div>
           <div className="stat-divider"></div>
-          <div className="stat"><span className="stat-num">5</span><span className="stat-label">Days Immersive</span></div>
+          <div className="stat"><span className="stat-num">5</span><span className="stat-label">{t(h.statDays)}</span></div>
           <div className="stat-divider"></div>
-          <div className="stat"><span className="stat-num">1</span><span className="stat-label">Latent Space</span></div>
+          <div className="stat"><span className="stat-num">1</span><span className="stat-label">{t(h.statSpace)}</span></div>
           <div className="stat-divider"></div>
-          <div className="stat"><span className="stat-inf" style={{ fontFamily: 'serif' }}>∞</span><span className="stat-label">Ideas</span></div>
+          <div className="stat"><span className="stat-inf" style={{ fontFamily: 'serif' }}>∞</span><span className="stat-label">{t(h.statIdeas)}</span></div>
         </div>
       </div>
     </section>
